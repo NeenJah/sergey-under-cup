@@ -60,15 +60,19 @@ body {
   height: 320px;
   background-color: violet;
   border-radius: 50%;
+  box-shadow: 0 0 4px violet;
   transform-origin: top left;
-  transition: transform .5s cubic-bezier(.65,-0.48,.22,1.49);
+  transition: transform .5s cubic-bezier(.65,-0.48,.22,1.49),
+              box-shadow .5s ease-out;
 }
 
 .sergey__wrapper:hover::before {
+  box-shadow: 1px 1px 4px #333;
   transform: rotate(-5deg);
 }
 
 .sergey__wrapper.active::before {
+  box-shadow: 1px 1px 4px #333;
   transform: rotate(-55deg);
 }
 
