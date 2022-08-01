@@ -1,0 +1,83 @@
+body {
+  color: #fff;
+  background-color: violet;
+}
+
+.sergey {
+  display: flex;
+}
+
+.sergey__wrapper {
+  position: relative;
+  margin: 0 auto;
+}
+
+.sergey__circle {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.sergey__text {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+  color: white;
+}
+
+.sergey__title,
+.sergey__label {
+  opacity: 0;
+}
+
+.sergey__title {
+  text-align: center;
+  transition: opacity .2s ease-in .5s;
+}
+
+.sergey__label {
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  transition: opacity .2s ease-in .7s;
+}
+
+.sergey__wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: block;
+  width: 320px;
+  height: 320px;
+  background-color: violet;
+  border-radius: 50%;
+  transform-origin: top left;
+  transition: transform .5s cubic-bezier(.65,-0.48,.22,1.49);
+}
+
+.sergey__wrapper:hover::before {
+  transform: rotate(-5deg);
+}
+
+.sergey__wrapper.active::before {
+  transform: rotate(-55deg);
+}
+
+.sergey__wrapper.active .sergey__title,
+.sergey__wrapper.active .sergey__label {
+  opacity: 1;
+}
+
+.sergey__img {
+  max-width: 100%;
+  object-fit: cover;
+}
